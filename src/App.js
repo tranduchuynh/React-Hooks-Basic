@@ -9,13 +9,14 @@ import { useEffect } from "react";
 import PostList from "./components/PostList";
 import Pagination from "./components/Pagination";
 import PostFiltersForm from "./PostFiltersForm";
+import Clock from "./components/Clock";
 
 function App() {
-  const [todoList, setTodoList] = useState([
-    { id: 1, title: "I love my parent" },
-    { id: 2, title: "We love my parent" },
-    { id: 3, title: "They love my parent" },
-  ]);
+  // const [todoList, setTodoList] = useState([
+  //   { id: 1, title: "I love my parent" },
+  //   { id: 2, title: "We love my parent" },
+  //   { id: 3, title: "They love my parent" },
+  // ]);
 
   const [postList, setPostList] = useState([]);
   const [pagination, setPagination] = useState({
@@ -28,6 +29,8 @@ function App() {
     _page: 1,
     title_like: "",
   });
+
+  const [showClock, setShowClock] = useState(true);
 
   useEffect(() => {
     async function fetchPostList() {
@@ -91,9 +94,13 @@ function App() {
       <h1>Welcome to react hooks</h1>
       {/* <TodoForm onSubmit={handleTodoFormSubmit} />
       <Todolist todos={todoList} onTodoClick={handleTodoClick} /> */}
-      <PostFiltersForm onSubmit={handleSearchTermChange} />
+      {/* <PostFiltersForm onSubmit={handleSearchTermChange} />
       <PostList posts={postList} />
-      <Pagination pagination={pagination} onPageChange={handlePageChange} />
+      <Pagination pagination={pagination} onPageChange={handlePageChange} /> */}
+      {showClock && <Clock />}
+      <button onClick={() => setShowClock(!showClock)}>
+        {showClock ? "Hide clock" : "Open clock"}
+      </button>
     </div>
   );
 }
