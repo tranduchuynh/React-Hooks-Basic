@@ -10,6 +10,7 @@ import PostList from "./components/PostList";
 import Pagination from "./components/Pagination";
 import PostFiltersForm from "./PostFiltersForm";
 import Clock from "./components/Clock";
+import MagicColor from "./components/MagicColor";
 
 function App() {
   // const [todoList, setTodoList] = useState([
@@ -97,10 +98,11 @@ function App() {
       {/* <PostFiltersForm onSubmit={handleSearchTermChange} />
       <PostList posts={postList} />
       <Pagination pagination={pagination} onPageChange={handlePageChange} /> */}
-      {showClock && <Clock />}
+      {/* {showClock && <Clock />}
       <button onClick={() => setShowClock(!showClock)}>
         {showClock ? "Hide clock" : "Open clock"}
-      </button>
+      </button> */}
+      <MagicColor />
     </div>
   );
 }
